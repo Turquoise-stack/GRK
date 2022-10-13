@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+  
+  <script>function setup() {
+  createCanvas(800,800);
+  
+  //200
+  proportion = height / 4;
+  
+  //400,200
+  x1= width /2;
+  y1 = proportion;
+  
+  //200,400
+  x2 = proportion;
+  y2 = height /2;
+  
+  //600,400
+  x3 = width - proportion;
+  y3 = height /2 ;
+
+
+
+
+  }
+    function draw() {
+    //noprotect
+    background(0);
+     cx = x1
+    cy = y1
+
+
+
+       for (i = 0; i < 30000; i++) {
+            random03 = floor(random(0, 3));
+            switch (random03) {
+                case 0:
+                    cx = (cx + x1) / 2;
+                    cy = (cy + y1) / 2;
+                    set(cx, cy, color(250, 250, 250));
+                    break;
+                case 1:
+                    cx = (cx + x2) / 2;
+                    cy = (cy + y2) / 2;
+                    set(cx, cy, color(250, 250, 250));
+                    break;
+                case 2:
+                    cx = (cx + x3) / 2;
+                    cy = (cy + y3) / 2;
+                    set(cx, cy, color(250, 250, 250));
+                    break;
+            }}
+
+
+
+    updatePixels()
+    }
+  </script>
+</body>
+</html>
