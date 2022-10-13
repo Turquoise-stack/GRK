@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+
+
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+  </head>
+
+
+
+ <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+
+
+
+   <script>
+      function setup() {
+        createCanvas(800, 700);
+            noLoop();
+
+
+
+     }
+
+
+
+     function draw() {
+        //noprotect
+        background(100, 200, 5500);
+        
+        for (y = 400; y < 800; y++)
+          for (x = 0; x < width; x++) {
+            set(x, y, color(100, 220, 100));
+          }
+          
+          
+       for( var i = 1000 ; i >= 0 ; i--){
+           
+        var randomX = floor(random(1,700));
+        var randomY = floor(random(400,800));
+        
+        var rR = floor(random(0,255));
+        var rG = floor(random(0,255));
+        var rB = floor(random(0,255));
+        
+        set(randomX, randomY, color(rR, rG, rB));
+       
+       }
+       
+       for(y=401 ; y >= 200 ; y--)
+           for(x=200 ; x<=600; x++){
+        set(x, y, color(150,50, 50))
+        }
+        
+         roof_margin = (600 - 200) / 5
+        roof_start_w = 150
+        roof_end_w = 650
+        roof_start_h = 200 / 2
+        roof_end_h = 200
+
+
+
+       roof_width = roof_end_w - roof_start_w
+        roof_height = roof_end_h - roof_start_h
+        roof_middle = roof_start_w + roof_width / 2
+
+
+
+       for (y = roof_start_h, w = 0; y < roof_end_h; y++, w += 2)
+            for (x = roof_middle - w; x < roof_middle + w; x++) {
+                set(x, y, color(255, 100, 100));
+            }
+          
+        updatePixels()
+      }
+
+
+
+   </script>
+  </body>
+
+
+
+</html>
